@@ -2203,6 +2203,7 @@
     <Content Include="assets\SweeAlert\sweetAlertStyle.js" />
     <Content Include="login.aspx" />
     <Content Include="Principal.aspx" />
+    <Content Include="UserAdmon.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2227,6 +2228,13 @@
     </Compile>
     <Compile Include="Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAdmon.aspx.cs">
+      <DependentUpon>UserAdmon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAdmon.aspx.designer.cs">
+      <DependentUpon>UserAdmon.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
