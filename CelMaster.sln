@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.2092
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelMaster", "CelMaster\CelMaster.csproj", "{D0978957-4F35-4ABE-86EF-A4BF042D2DEE}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EL", "EL\EL.csproj", "{AE636018-25C8-4D89-900B-7E34CAED8AA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{D75ED2E6-8593-445C-8D55-0E87723D70AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilidades", "Utilidades\Utilidades.csproj", "{899DE03A-D40A-4D5F-819B-664B7C20CFD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D75ED2E6-8593-445C-8D55-0E87723D70AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D75ED2E6-8593-445C-8D55-0E87723D70AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D75ED2E6-8593-445C-8D55-0E87723D70AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899DE03A-D40A-4D5F-819B-664B7C20CFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899DE03A-D40A-4D5F-819B-664B7C20CFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899DE03A-D40A-4D5F-819B-664B7C20CFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899DE03A-D40A-4D5F-819B-664B7C20CFD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

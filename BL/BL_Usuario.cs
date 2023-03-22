@@ -30,6 +30,10 @@ namespace BL
         {
             return Dal_Usuario.ListarUsuario(Activo);
         }
+        public static bool ExisteUserName(string UserName)
+        {
+            return Dal_Usuario.ExisteUserName(UserName);
+        }
 
 
 
