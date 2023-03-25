@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CelMaster
 {
-    public partial class UserAdmon : System.Web.UI.Page
+    public partial class Admon : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

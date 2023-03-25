@@ -13,5 +13,28 @@ namespace CelMaster
         {
 
         }
+
+        protected void Inv_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Inventario.aspx");
+        }
+
+        protected void Envios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void fac_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Facturacion.aspx");
+       
+
+        }
+
+        protected void nuevopro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/NuevosProductos.aspx");
+
+        }
     }
 }

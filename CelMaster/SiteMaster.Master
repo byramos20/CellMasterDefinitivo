@@ -30,8 +30,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
              <div class="header-area">
         <div class="container"/>
             <div class="row"/>
@@ -42,58 +40,19 @@
                             <li><a href="#"><i class="fa fa-heart"></i> Lista de deseos</a></li>
                             <li><a href="cart.html"><i class="fa fa-user"></i> Mis compras</a></li>
                             <li><a href="checkout.html"><i class="fa fa-user"></i> Facturación de producto</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Acceso</a></li>
+                            <li><a href="#"><i class="fa fa-user"></i> Cerra Sesion</a></li>
                         </ul>
                     </div>
                 </div>
-
-             <div class="site-branding-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="logo">
-                        <h1><a href="./"><img src="assets/estiloproyecto/img/logo.png"></a></h1>
-                    </div>
-                </div>
-                
-                <div class="col-sm-6">
-                    <div class="shopping-item">
-                        <a href="cart.html">Compras - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End site branding area -->
-    
-    <div class="mainmenu-area">
-        <div class="container">
-            <div class="row">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Barra de navegación</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div> 
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="shop.html">Tienda</a></li>
-                        <li><a href="single-product.html">Productos</a></li>
-                        <li><a href="cart.html">Compras</a></li>
-                        <li><a href="checkout.html">Facturación de productos</a></li>
-                    </ul>
-                </div>  
-            </div>
-        </div>
-    </div>
+            <br />
 
 
 
 
 
-
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
         </div>
     </form>
      <!-- Latest jQuery form server -->

@@ -10,7 +10,7 @@ namespace DAL
     {
         public static string ConexionString()
         {
-            return "Conexion";
+            return "Data Source=BRYAN\\SQLEXPRESS;Initial Catalog=BDSeguridadInformatica;Integrated Security=True";
         }
     }
 }

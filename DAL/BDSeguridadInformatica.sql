@@ -8,11 +8,12 @@ CREATE TABLE [dbo].[Formulario]
 (
 [IdFormulario] [INT] PRIMARY KEY NOT NULL IDENTITY(1, 1),
 [NombreFormulario] [VARCHAR] (100)  NOT NULL,
-[Activo] [BIT] NOT NULL,
-[Usuarioregistro] [INT] NOT NULL,
-[Fecharegistro] [DATETIME] NOT NULL,
-[Usuarioactualiza] [INT] NULL,
-[Fechaactualiza] [DATETIME] NULL
+[Activo] [BIT] NOT NULL
+
+,IdUsuarioRegistro [INT] NOT NULL
+,FechaRegistro [DATETIME] NOT NULL
+,IdUsuarioActualiza [INT] NULL
+,FechaActualizacion [DATETIME] NULL
 )
 GO
 CREATE TABLE [dbo].[Rol]
@@ -21,6 +22,11 @@ CREATE TABLE [dbo].[Rol]
 [NombreRol] [VARCHAR] (50)  NOT NULL,
 [Descripcion] [VARCHAR] (150)  NOT NULL,
 [Activo] [BIT] NOT NULL
+
+,IdUsuarioRegistro [INT] NOT NULL
+,FechaRegistro [DATETIME] NOT NULL
+,UsuarioActualiza [INT] NULL
+,FechaActualizacion [DATETIME] NULL
 )
 GO
 CREATE TABLE [dbo].[RolFormulario]
@@ -31,17 +37,19 @@ CREATE TABLE [dbo].[RolFormulario]
 [Escribir] [BIT] NOT NULL,
 [Anular] [BIT] NOT NULL,
 [FinalizarSolicitud] [BIT] NOT NULL,
-[Activo] [BIT] NOT NULL,
-[UsuarioRegistra] [INT] NOT NULL,
-[FechaRegistro] [DATETIME] NOT NULL,
-[UsuarioActualiza] [INT] NULL,
-[FechaActualizacion] [DATETIME] NULL
+[Activo] [BIT] NOT NULL
+
+,IdUsuarioRegistro [INT] NOT NULL
+,FechaRegistro [DATETIME] NOT NULL
+,IdUsuarioActualiza [INT] NULL
+,FechaActualizacion [DATETIME] NULL
 )
 GO
 CREATE TABLE [dbo].[Usuario]
 (
 [IdUsuario] [INT] PRIMARY KEY NOT NULL IDENTITY(1, 1),
 [Nombre] [VARCHAR] (250)  NOT NULL,
+[UserNmes] [VARCHAR] (250)  NOT NULL,
 [Login] [VARCHAR] (20)  NOT NULL,
 [Password] [varbinary] (Max) NOT NULL,
 [Email] [VARCHAR] (50)  NULL,
@@ -50,11 +58,11 @@ CREATE TABLE [dbo].[Usuario]
 [Intentos] [INT] NOT NULL,
 [Bloqueado] [BIT] NOT NULL,
 [Baja] [BIT] NOT NULL,
-[Activo] [BIT] NOT NULL,
-[UsuarioRegistro] [INT] NOT NULL,
-[FechaRegistro] [DATETIME] NOT NULL,
-[UsuarioActualiza] [INT] NULL,
-[FechaActualiza] [DATETIME] NULL
+[Activo] [BIT] NOT NULL
+,IdUsuarioRegistro [INT] NOT NULL
+,FechaRegistro [DATETIME] NOT NULL
+,IdUsuarioActualiza [INT] NULL
+,FechaActualizacion [DATETIME] NULL
 )
 GO
 CREATE TABLE [dbo].[Parametros]
@@ -63,11 +71,11 @@ CREATE TABLE [dbo].[Parametros]
 [Descripcion] [VARCHAR] (50)  NOT NULL,
 [Parametro] [VARCHAR] (50)  NOT NULL,
 [TipoDato] [VARCHAR] (50)  NOT NULL,
-[Activo] [BIT] NOT NULL,
-[Fecharegistro] [DATETIME] NOT NULL,
-[Usuarioregistro] [INT] NOT NULL,
-[Fechaactualiza] [DATETIME] NULL,
-[Usuarioactualiza] [INT] NULL
+[Activo] [BIT] NOT NULL
+,IdUsuarioRegistro [INT] NOT NULL
+,FechaRegistro [DATETIME] NOT NULL
+,IdUsuarioActualiza [INT] NULL
+,FechaActualizacion [DATETIME] NULL
 )
 GO
 CREATE TABLE UnidadesMedidas (

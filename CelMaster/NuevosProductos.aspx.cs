@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace CelMaster
 {
-    public partial class SiteMaster : System.Web.UI.MasterPage
+    public partial class Productos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void user_Click(object sender, EventArgs e)
+        protected void inicio_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Admon.aspx");
+            Response.Redirect("~/Principal.aspx");
         }
     }
 }
