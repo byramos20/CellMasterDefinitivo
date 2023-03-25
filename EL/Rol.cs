@@ -9,12 +9,13 @@ namespace EL
     {
         [Key]
         public int IdRol { get; set; }
+        public String NombreRol { get; set; }
         [Required]
         public string Descripcion   { get; set; }
         [Required]
         public int IdUsuarioRegistro { get; set; }
         public DateTime FechaRegistro { get; set; }
-        public int? IdUsuarioActualiza { get; set; }
+        public int UsuarioActualiza { get; set; }
         public DateTime? FechaActualizacion { get; set; }
         public bool Activo { get; set; }
     }

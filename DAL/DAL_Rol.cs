@@ -28,7 +28,7 @@ namespace DAL
             {
                 var Consulta = (from tabla in bd.Rol where tabla.Activo  && tabla.IdRol == Entidad.IdRol select tabla).SingleOrDefault();
                 Consulta.Descripcion = Entidad.Descripcion;
-                Consulta.IdUsuarioActualiza = Entidad.IdUsuarioActualiza;
+                Consulta.UsuarioActualiza = Entidad.UsuarioActualiza;
                 Consulta.FechaActualizacion = DateTime.Now;        
                 return bd.SaveChanges()>0;
             }
@@ -40,7 +40,7 @@ namespace DAL
             {
                 var Consulta = (from tabla in bd.Rol where tabla.Activo && tabla.IdRol == Entidad.IdRol select tabla).SingleOrDefault();
                 Consulta.Activo = false;
-                Consulta.IdUsuarioActualiza = Entidad.IdUsuarioActualiza;
+                Consulta.UsuarioActualiza = Entidad.UsuarioActualiza;
                 Consulta.FechaActualizacion = DateTime.Now;
                 return bd.SaveChanges() > 0;
             }

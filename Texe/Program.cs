@@ -14,6 +14,7 @@ namespace Texe
         {
             Rol rol = new Rol();
 
+            rol.NombreRol = "Cellmaster";
             rol.Descripcion = "Administrador";
             rol.IdUsuarioRegistro = 1;
 
