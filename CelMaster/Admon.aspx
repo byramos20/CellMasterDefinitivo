@@ -23,7 +23,7 @@
                                 <div class="input-group">
                                     <asp:TextBox runat="server" ID="txtContraseña" MaxLength="60" AutoPostBack="false" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                     <span class="input-group-append">
-                                        <%--<asp:LinkButton ID="lnkMostrarPassword" OnClick="lnkMostrarPassword_Click" UseSubmitBehavior="false" runat="server" class="btn btn-block btn-primary"><i runat="server" id="iconoverpassword" class="fas fa-eye"></i></asp:LinkButton>--%>
+                                        <asp:LinkButton ID="lnkMostrarPassword" OnClick="lnkMostrarPassword_Click"  UseSubmitBehavior="false" runat="server" class="btn btn-block btn-primary"><i runat="server" id="iconoverpassword" class="fas fa-eye"></i></asp:LinkButton>
                                     </span>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-md-3" style="margin-top: 10px">
                                 <label>Rol</label><label style="color: firebrick">*</label>
-                                <%--<asp:DropDownList ID="ddlRol" runat="server" AppendDataBoundItems="true" class="form-control form-select" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>--%>
+                                <asp:DropDownList ID="ddlRol" runat="server" AppendDataBoundItems="true" class="form-control form-select" AutoPostBack="true" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged1"></asp:DropDownList>
                             </div>
 
 
@@ -45,25 +45,25 @@
                             </div>
                             <div class="col-sm-1" style="margin-top: 10px">
                                 <label>Baja</label>
-                                <%--<asp:DropDownList ID="ddlBaja" runat="server" AppendDataBoundItems="true" class="form-control form-select" AutoPostBack="true" OnSelectedIndexChanged="ddlBaja_SelectedIndexChanged"></asp:DropDownList>--%>
+                                <asp:DropDownList ID="ddlBaja" runat="server" AppendDataBoundItems="true" class="form-control form-select" AutoPostBack="true" OnSelectedIndexChanged="ddlBaja_SelectedIndexChanged"></asp:DropDownList>
                             </div>
 
                             <%-- Botones --%>
                             <div class="row">
                                 <div class="col-md-2">
-                                    <%--<asp:LinkButton runat="server" ID="lnkVolver" CssClass="w-100 btn " BackColor="#6699CC" ForeColor="White" OnClick="lnkVolver_Click">Volver</asp:LinkButton>--%>
+                                    <asp:LinkButton runat="server" ID="lnkVolver" CssClass="w-100 btn " BackColor="#6699CC" ForeColor="White" OnClick="lnkVolver_Click" >Volver</asp:LinkButton>
                                 </div>
                                 <asp:Panel runat="server" ID="panelBtnNuevo" class="col-md-2" Visible="true">
-                                    <%--<asp:LinkButton runat="server" ID="lnkNuevo" CssClass="w-100 btn " BackColor="#6699CC" ForeColor="White" OnClick="lnkNuevo_Click1">Nuevo</asp:LinkButton>--%>
+                                   <asp:LinkButton runat="server" ID="lnkNuevo" CssClass="w-100 btn " BackColor="#6699CC" ForeColor="White" OnClick="lnkNuevo_Click">Nuevo</asp:LinkButton>
                                 </asp:Panel>
                                 <asp:Panel runat="server" ID="panelBtnGuardar" class="col-md-2">
-                                    <%--<asp:LinkButton runat="server" ID="lnkGuardar" CssClass="w-100 btn btn-primary" ForeColor="White" OnClientClick="confirmGuardar('','Seguro desea guardar el usuario.','lnkGuardar',true);return false;" OnClick="lnkGuardar_Click">Guardar</asp:LinkButton>--%>
+                                    <asp:LinkButton runat="server" ID="lnkGuardar" CssClass="w-100 btn btn-primary" ForeColor="White" OnClientClick="confirmGuardar('','Seguro desea guardar el usuario.','lnkGuardar',true);return false;" OnClick="lnkGuardar_Click">Guardar</asp:LinkButton>
                                 </asp:Panel>
                                 <asp:Panel runat="server" ID="panelBtnAnular" class="col-md-2">
-                                    <%--<asp:LinkButton runat="server" ID="lnkAnular" CssClass="w-100 btn btn-warning" ForeColor="White" OnClientClick="Confirmar('Seguro desea anular el registro','lnkAnular','');return false;" OnClick="lnkAnular_Click">Anular</asp:LinkButton>--%>
+                                    <asp:LinkButton runat="server" ID="lnkAnular" CssClass="w-100 btn btn-warning" ForeColor="White" OnClientClick="Confirmar('Seguro desea anular el registro','lnkAnular','');return false;" OnClick="lnkAnular_Click">Anular</asp:LinkButton>
                                 </asp:Panel>
                                 <asp:Panel runat="server" ID="panelBtnDesbloquear" class="col-md-2">
-                                    <%--<asp:LinkButton runat="server" ID="lnkDesbloquear" CssClass="form-control btn btn-primary" ForeColor="White" OnClientClick="confirmDesbloquear('','Seguro desea desbloquear el usuario.','lnkDesbloquear',true);return false;" OnClick="lnkDesbloquear_Click">Desbloquear</asp:LinkButton>--%>
+                                    <asp:LinkButton runat="server" ID="lnkDesbloquear" CssClass="form-control btn btn-primary" ForeColor="White" OnClientClick="confirmDesbloquear('','Seguro desea desbloquear el usuario.','lnkDesbloquear',true);return false;" OnClick="lnkDesbloquear_Click">Desbloquear</asp:LinkButton>
                                 </asp:Panel>
                             </div>
                             <div class="row"></div>
@@ -96,7 +96,7 @@
                                                 CssClass="table table-bordered table-hover"
                                                 AutoGenerateColumns="False"
                                                 EmptyDataText="No se encontraron registros"
-                                                DataKeyNames="IdUsuario,Nombre,Login,Email,Cargo,IdRol,Bloqueado,Baja"
+                                                DataKeyNames="IdUsuario,NombreCompleto,Login,Email,Cargo,IdRol,Bloqueado,Baja"
                                                 OnSelectedIndexChanged="gridUsuarios_SelectedIndexChanged"
                                                 OnPageIndexChanging="gridUsuarios_PageIndexChanging"
                                                 OnRowCommand="gridUsuarios_RowCommand" OnRowDataBound="gridUsuarios_RowDataBound1" CellPadding="4" ForeColor="#333333">

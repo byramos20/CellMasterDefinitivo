@@ -55,7 +55,7 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><asp:LinkButton runat="server" ID="peincipal2" OnClick="peincipal2_Click">Inicio</asp:LinkButton></li>
+                        <li><asp:LinkButton runat="server" ID="peincipal2" OnClick="peincipal2_Click">Salir</asp:LinkButton></li>
  
                     </ul>
                 </div>  

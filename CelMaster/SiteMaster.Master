@@ -37,10 +37,7 @@
                     <div class="user-menu">
                         <ul>
                             <li><asp:Linkbutton runat="server" ID="user" OnClick="user_Click"><i class="fa fa-user"></i> Mi cuenta</asp:Linkbutton></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> Lista de deseos</a></li>
-                            <li><a href="cart.html"><i class="fa fa-user"></i> Mis compras</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-user"></i> Facturación de producto</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Cerra Sesion</a></li>
+                            <li><asp:LinkButton runat="server" ID="SiteImicio" OnClick="SiteImicio_Click"><i class="fa fa-user"></i>Inicio</asp:LinkButton></li>
                         </ul>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ namespace CelMaster
 
         protected void Envios_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Envios.aspx");
         }
 
         protected void fac_Click(object sender, EventArgs e)

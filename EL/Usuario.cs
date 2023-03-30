@@ -14,33 +14,34 @@ namespace EL
     {
         [Key]
         public int IdUsuario { get; set; }
-
         [Required]
-        public String Nombre { get; set; }
-
+        [MaxLength(200)]
+        public string NombreCompleto { get; set; }
         [Required]
-        public String Login { get; set; }
-
+        [MaxLength(200)]
+        public string Correo { get; set; }
         [Required]
-        public Byte[] Password { get; set; }
-
-        [Required]
-        public String Email { get; set; }
+        [MaxLength(50)]
         public string UserName { get; set; }
-
         [Required]
-        public String Cargo { get; set; }
+        public byte[] Password { get; set; }
+        [Required]
         public bool Bloqueado { get; set; }
         [Required]
         public byte IntentosFallidos { get; set; }
         [Required]
         public int IdRol { get; set; }
-        public int IdUsuarioRegisrtro { get; set; }
 
-        public DateTime FechaRegistro { get; set; }
+        [Required]
         public bool Activo { get; set; }
-        public DateTime FechaActualiza { get; set; }
 
-        public int IdUsuarioActualiza { get; set; }
+        [Required]
+        public int IdUsuarioRegistra { get; set; }
+
+        [Required]
+        public DateTime FechaRegistro { get; set; }
+
+        public int? IdUsuarioActualiza { get; set; }
+        public DateTime? FechaActualizacion { get; set; }
     }
 }

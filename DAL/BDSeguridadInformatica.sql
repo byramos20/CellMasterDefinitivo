@@ -48,18 +48,16 @@ GO
 CREATE TABLE [dbo].[Usuario]
 (
 [IdUsuario] [INT] PRIMARY KEY NOT NULL IDENTITY(1, 1),
-[Nombre] [VARCHAR] (250)  NOT NULL,
+[NombreCompleto] [VARCHAR] (250)  NOT NULL,
 [UserNmes] [VARCHAR] (250)  NOT NULL,
-[Login] [VARCHAR] (20)  NOT NULL,
 [Password] [varbinary] (Max) NOT NULL,
-[Email] [VARCHAR] (50)  NULL,
-[Cargo] [VARCHAR] (100)  NULL,
+[Correo] [VARCHAR] (50)  NULL,
 [IdRol] [INT] NOT NULL,
-[Intentos] [INT] NOT NULL,
+[IntentosFallidos] [INT] NOT NULL,
 [Bloqueado] [BIT] NOT NULL,
 [Baja] [BIT] NOT NULL,
 [Activo] [BIT] NOT NULL
-,IdUsuarioRegistro [INT] NOT NULL
+,IdUsuarioRegistra [INT] NOT NULL
 ,FechaRegistro [DATETIME] NOT NULL
 ,IdUsuarioActualiza [INT] NULL
 ,FechaActualizacion [DATETIME] NULL

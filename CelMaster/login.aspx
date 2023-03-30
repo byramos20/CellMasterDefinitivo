@@ -7,10 +7,10 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <script src="assets/JQuery/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <%-- alertas --%>
     <link href="assets/Fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="assets/SweeAlert/sweetalert.min.css" rel="stylesheet" />
-    <script src="asset/SweeAlert/sweetalert.all.min.js"></script>
-    <script src="asset/SweeAlert/sweetAlertStyle.js"></script>
+    
 
 
 </head>
@@ -53,5 +53,7 @@
             </div>
         </div>
     </form>
+    <script src="assets/SweeAlert/sweetalert.all.min.js"></script>
+    <script src="assets/SweeAlert/sweetAlertStyle.js"></script>
 </body>
 </html>

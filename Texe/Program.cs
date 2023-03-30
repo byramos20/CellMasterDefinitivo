@@ -12,13 +12,16 @@ namespace Texe
     {
         static void Main(string[] args)
         {
-            Rol rol = new Rol();
+            Usuario usuario = new Usuario();
 
-            rol.NombreRol = "Cellmaster";
-            rol.Descripcion = "Administrador";
-            rol.IdUsuarioRegistro = 1;
+            usuario.NombreCompleto = "Bryan Ramos";
+            usuario.UserName = "Bramos10";
+            usuario.Password = "123456789BR";
+            usuario.Correo = "ramos102013gmail.com";
 
-            Console.WriteLine(BL_Rol.InsertRol(rol).IdRol);
+            usuario.IdUsuarioRegistra = 1;
+
+            Console.WriteLine(BL_Usuario.Insert(usuario).IdUsuario);
         }
     }
 }

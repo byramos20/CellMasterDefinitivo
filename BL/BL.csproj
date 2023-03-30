@@ -44,13 +44,14 @@
     <Compile Include="BL_Clientes.cs" />
     <Compile Include="BL_DetallesFacturas.cs" />
     <Compile Include="BL_Facturas.cs" />
+    <Compile Include="BL_Formulario.cs" />
     <Compile Include="BL_Inventario.cs" />
     <Compile Include="BL_Parametros.cs" />
     <Compile Include="BL_Productos.cs" />
     <Compile Include="BL_Rol.cs" />
+    <Compile Include="BL_RolFormulario.cs" />
     <Compile Include="BL_UnidadesMedidas.cs" />
     <Compile Include="BL_Usuario.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

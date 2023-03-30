@@ -53,12 +53,15 @@
   <ItemGroup>
     <Compile Include="Clientes.cs" />
     <Compile Include="DetallesFacturas.cs" />
+    <Compile Include="Enum.cs" />
     <Compile Include="Facturas.cs" />
+    <Compile Include="Formulario.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="Parametros.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol.cs" />
+    <Compile Include="RolFormulario.cs" />
     <Compile Include="UnidadesMedidas.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

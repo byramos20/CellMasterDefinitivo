@@ -2213,6 +2213,7 @@
     <Content Include="assets\SweeAlert\sweetalert.min.css" />
     <Content Include="assets\SweeAlert\sweetalert.min.js" />
     <Content Include="assets\SweeAlert\sweetAlertStyle.js" />
+    <Content Include="Envios.aspx" />
     <Content Include="Facturacion.aspx" />
     <Content Include="Inventario.aspx" />
     <Content Include="login.aspx" />
@@ -2228,6 +2229,13 @@
     </Compile>
     <Compile Include="Admon.aspx.designer.cs">
       <DependentUpon>Admon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Envios.aspx.cs">
+      <DependentUpon>Envios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Envios.aspx.designer.cs">
+      <DependentUpon>Envios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Facturacion.aspx.cs">
       <DependentUpon>Facturacion.aspx</DependentUpon>
