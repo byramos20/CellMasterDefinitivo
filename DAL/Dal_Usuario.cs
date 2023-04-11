@@ -152,6 +152,22 @@ namespace DAL
         {
             return Encripty.Encrypt(FlatString, Key, IV);
         }
+        public static bool VerificarCuentaBloqueada(string UserName)
+        {
+            using (BDSeguridadInformatica bd = new BDSeguridadInformatica())
+            {
+                return bd.Usuario.
+                    Where(a => a.UserName.ToLower() == UserName.ToLower()
+                    && a.Bloqueado).Count() > 0;
+            }
+        }
+        public static short CatidadIntentosFallidos(string UserName)
+        {
+            using (BDSeguridadInformatica bd = new BDSeguridadInformatica())
+            {
+                return bd.Usuario.Where(a => a.UserName.ToLower() == UserName.ToLower()).SingleOrDefault().IntentosFallidos;
+            }
+        }
     }
 
 

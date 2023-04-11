@@ -49,11 +49,11 @@ CREATE TABLE [dbo].[Usuario]
 (
 [IdUsuario] [INT] PRIMARY KEY NOT NULL IDENTITY(1, 1),
 [NombreCompleto] [VARCHAR] (250)  NOT NULL,
-[UserNmes] [VARCHAR] (250)  NOT NULL,
+[UserName] [VARCHAR] (250)  NOT NULL,
 [Password] [varbinary] (Max) NOT NULL,
 [Correo] [VARCHAR] (50)  NULL,
-[IdRol] [INT] NOT NULL,
-[IntentosFallidos] [INT] NOT NULL,
+[IdRol] [INT] FOREIGN KEY REFERENCES Rol(IdRol) NOT NULL,
+[IntentosFallidos] [SMALLINT] NOT NULL DEFAULT(0),
 [Bloqueado] [BIT] NOT NULL,
 [Baja] [BIT] NOT NULL,
 [Activo] [BIT] NOT NULL

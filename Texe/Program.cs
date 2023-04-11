@@ -5,23 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using EL;
 using BL;
+using System.Globalization;
+using Utilidades;
 
-namespace Texe
+namespace Text
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Usuario usuario = new Usuario();
+            byte[] Key = Encoding.UTF8.GetBytes("S3Gur1d4d1nf0rm4t1c42o23");//24 Caracteres
+            byte[] IV = Encoding.UTF8.GetBytes("Pr0y3ct03J3mpl00");//16 Caracteres
 
-            usuario.NombreCompleto = "Bryan Ramos";
-            usuario.UserName = "Bramos10";
-            usuario.Password = "123456789BR";
-            usuario.Correo = "ramos102013gmail.com";
+            Usuario user = new Usuario();
+            user.IdUsuario = 1007;
+            user.IdUsuarioActualiza = 1;
+            user.Password = Encripty.Encrypt("2212", Key, IV);
+            BL_Usuario.PasswordUpdate(user);
 
-            usuario.IdUsuarioRegistra = 1;
 
-            Console.WriteLine(BL_Usuario.Insert(usuario).IdUsuario);
+
+
+
         }
+
     }
 }

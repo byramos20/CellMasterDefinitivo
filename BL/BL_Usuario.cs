@@ -72,6 +72,14 @@ namespace BL
         {
             return Dal_Usuario.Encrypt(FlatString);
         }
+        public static bool VerificarCuentaBloqueada(string UserName)
+        {
+            return Dal_Usuario.VerificarCuentaBloqueada(UserName);
+        }
+        public static short CatidadIntentosFallidos(string UserName)
+        {
+            return Dal_Usuario.CatidadIntentosFallidos(UserName);
+        }
 
 
 
