@@ -38,6 +38,7 @@
                         <ul>
                             <li><asp:Linkbutton runat="server" ID="user" OnClick="user_Click"><i class="fa fa-user"></i> Mi cuenta</asp:Linkbutton></li>
                             <li><asp:LinkButton runat="server" ID="SiteImicio" OnClick="SiteImicio_Click"><i class="fa fa-user"></i>Inicio</asp:LinkButton></li>
+                            <li><asp:LinkButton runat="server" ID="Cerrar" OnClick="Cerrar_Click"><i class="fa fa-user"></i>Cerra Sesion</asp:LinkButton></li>
                         </ul>
                     </div>
                 </div>

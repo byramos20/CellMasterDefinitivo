@@ -23,5 +23,13 @@ namespace CelMaster
         {
             Response.Redirect("~/Principal.aspx");
         }
+
+        protected void Cerrar_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+
+            Response.Redirect("~/login.aspx");
+        }
     }
 }
