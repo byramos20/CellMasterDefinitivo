@@ -16,11 +16,22 @@ namespace CelMaster
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                AbandonarSesion();
+            }
 
         }
         #region Metodos y Funciones
-        
+        private void AbandonarSesion()
+        {
+            Session.Abandon();
+            Session.RemoveAll();
+            HttpCookie CookieSesion = new HttpCookie("ASP.NET_SessionId", "");
+            Response.Cookies.Add(CookieSesion);
+        }
+
+
         private void Mensaje(string Message, int tipoMensaje, string Encabezado = "", bool Html = false, bool Fondo = false, bool returnLogin = false, string UrlReturn = "", bool CerrarClick = true)
         {
             //icon -->      success,warning, error,  info

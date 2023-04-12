@@ -19,29 +19,21 @@ namespace EL
         {
             Administrador = 1,
             Gestor = 2,
-            TecnicoSede = 3,
-            TecnicoCID = 4,
-            TecnicoCIM = 5,
-            Lectura = 6
+           
         }
         public enum eParametro
         {
             IntentosFallidos = 1
         }
-        public enum eFormularios
+        public enum eFormulario
         {
             SiteMaster = 1,
             Principal = 2,
-            CambiarPassword = 3,
-            Formularios = 4,
-            Catalogos = 5,
-            Usuarios = 6,
-            Formulario_1 = 7,
-            Formulario_2 = 8,
-            Formulario_3 = 9,
-            Catalogo_1 = 10,
-            Catalogo_2 = 11,
-            Catalogo_3 = 12
+            Facturacion = 3,    
+            Inventario = 4,
+            nuevos_Productos = 5,
+            Envios = 6,
+           
         }
         public enum ePermisos
         {

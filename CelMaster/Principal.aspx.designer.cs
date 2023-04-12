@@ -14,6 +14,7 @@ namespace CelMaster
     public partial class usiariosAdmon
     {
 
+
         /// <summary>
         /// Control fac.
         /// </summary>
@@ -21,6 +22,17 @@ namespace CelMaster
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.Panel panelFormulario_1;
+
+        /// <summary>
+        /// Control lnkFormulario_1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+     
         protected global::System.Web.UI.WebControls.LinkButton fac;
 
         /// <summary>
@@ -30,10 +42,29 @@ namespace CelMaster
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelFormulario_2;
+
+        /// <summary>
+        /// Control lnkFormulario_1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+
         protected global::System.Web.UI.WebControls.LinkButton Envios;
 
         /// <summary>
         /// Control Inv.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelFormulario_3;
+
+        /// <summary>
+        /// Control lnkFormulario_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -48,6 +79,16 @@ namespace CelMaster
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelFormulario_4;
+
+        /// <summary>
+        /// Control lnkFormulario_1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+
         protected global::System.Web.UI.WebControls.LinkButton nuevopro;
     }
 }

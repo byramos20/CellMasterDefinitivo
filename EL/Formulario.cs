@@ -16,8 +16,8 @@ namespace EL
         [Required]
         public int Usuarioregistro { get; set; }
         [Required]
-        public DateTime Fecharegistro { get; set; }
-        public int? Usuarioactualiza { get; set; }
-        public DateTime? Fechaactualiza { get; set; }
+        public DateTime FechaRegistro { get; set; }
+        public int? IdUsuarioActualiza { get; set; }
+        public DateTime? FechaActualiza { get; set; }
     }
 }

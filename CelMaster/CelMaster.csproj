@@ -2396,6 +2396,10 @@
       <Project>{ae636018-25c8-4d89-900b-7e34caed8aa5}</Project>
       <Name>EL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utilidades\Utilidades.csproj">
+      <Project>{899de03a-d40a-4d5f-819b-664b7c20cfd8}</Project>
+      <Name>Utilidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
