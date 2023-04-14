@@ -18,9 +18,9 @@ namespace Text
             byte[] IV = Encoding.UTF8.GetBytes("Pr0y3ct03J3mpl00");//16 Caracteres
 
             Usuario user = new Usuario();
-            user.IdUsuario = 1007;
+            user.IdUsuario = 1010;
             user.IdUsuarioActualiza = 1;
-            user.Password = Encripty.Encrypt("2212", Key, IV);
+            user.Password = Encripty.Encrypt("0702", Key, IV);
             BL_Usuario.PasswordUpdate(user);
 
 

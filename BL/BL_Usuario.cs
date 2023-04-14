@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
@@ -22,7 +23,6 @@ namespace BL
         {
             return Dal_Usuario.PasswordUpdate(Entidad);
         }
-
         public static bool Delete(Usuario Entidad)
         {
             return Dal_Usuario.Delete(Entidad);
@@ -30,6 +30,14 @@ namespace BL
         public static List<Usuario> List(bool Activo = true)
         {
             return Dal_Usuario.List(Activo);
+        }
+        public static List<vUsuario> vUsuario(bool Activo = true)
+        {
+            return Dal_Usuario.vUsuario(Activo);
+        }
+        public static vUsuario vUsuarios(int IdRegistro)
+        {
+            return Dal_Usuario.vUsuarios(IdRegistro);
         }
         public static Usuario Registro(int IdRegistro)
         {

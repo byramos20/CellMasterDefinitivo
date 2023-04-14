@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using EL;
 using Utilidades;
@@ -70,6 +72,57 @@ namespace DAL
                 return bd.Usuario.Where(a => a.Activo == Activo).ToList();
             }
         }
+        public static List<vUsuario> vUsuario(bool Activo = true)
+        {
+            using (BDSeguridadInformatica bd = new BDSeguridadInformatica())
+            {
+                var Consulta = (from tblUsuario in bd.Usuario
+                                join tblRol in bd.Rol on tblUsuario.IdRol equals tblRol.IdRol
+                                where tblUsuario.Activo == Activo && tblRol.Activo == Activo
+                                select new vUsuario
+                                {
+                                    IdUsuario = tblUsuario.IdUsuario,
+                                    NombreCompleto = tblUsuario.NombreCompleto,
+                                    Correo = tblUsuario.Correo,
+                                    UserName = tblUsuario.UserName,
+                                    Bloqueado = tblUsuario.Bloqueado,
+                                    CuentaBloqueada = (tblUsuario.Bloqueado)?"Si":"NO",
+
+                                    IntentosFallidos = tblUsuario.IntentosFallidos,
+                                    IdRol = tblUsuario.IdRol,
+                                    NombreRol = tblRol.NombreRol
+
+
+                                }).ToList();
+                return Consulta;
+            }
+        }
+        public static vUsuario vUsuarios(int IdRegistro)
+        {
+            using (BDSeguridadInformatica bd = new BDSeguridadInformatica())
+            {
+                var Consulta = (from tblUsuario in bd.Usuario
+                                join tblRol in bd.Rol on tblUsuario.IdRol equals tblRol.IdRol
+                                where tblUsuario.Activo == true && tblRol.Activo == true && tblUsuario.IdUsuario == IdRegistro
+                                select new vUsuario
+                                {
+                                    IdUsuario = tblUsuario.IdUsuario,
+                                    NombreCompleto = tblUsuario.NombreCompleto,
+                                    Correo = tblUsuario.Correo,
+                                    UserName = tblUsuario.UserName,
+                                    Bloqueado = tblUsuario.Bloqueado,
+                                    CuentaBloqueada = (tblUsuario.Bloqueado) ? "Si" : "NO",
+
+                                    IntentosFallidos = tblUsuario.IntentosFallidos,
+                                    IdRol = tblUsuario.IdRol,
+                                    NombreRol = tblRol.NombreRol
+
+
+                                }).SingleOrDefault();
+                return Consulta;
+            }
+        }
+
         public static Usuario Registro(int IdRegistro)
         {
             using (BDSeguridadInformatica bd = new BDSeguridadInformatica())

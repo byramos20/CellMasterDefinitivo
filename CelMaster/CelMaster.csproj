@@ -95,6 +95,7 @@
     <Content Include="assets\estilologin\sign-in.css" />
     <Content Include="assets\estiloproyecto\css\bootstrap.min.css" />
     <Content Include="assets\estiloproyecto\css\font-awesome.min.css" />
+    <Content Include="assets\estiloproyecto\css\grid.css" />
     <Content Include="assets\estiloproyecto\css\owl.carousel.css" />
     <Content Include="assets\estiloproyecto\css\responsive.css" />
     <Content Include="assets\estiloproyecto\fonts\fontawesome-webfont.svg" />

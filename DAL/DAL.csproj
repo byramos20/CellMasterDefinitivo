@@ -59,9 +59,11 @@
     <Compile Include="DAL_Formulario.cs" />
     <Compile Include="DAL_Inventario.cs" />
     <Compile Include="DAL_Parametros.cs" />
+    <Compile Include="DAL_Permisos.cs" />
     <Compile Include="DAL_Productos.cs" />
     <Compile Include="DAL_Rol.cs" />
     <Compile Include="DAL_RolFormulario.cs" />
+    <Compile Include="DAL_RolPermisos.cs" />
     <Compile Include="DAL_UnidadesMedidas.cs" />
     <Compile Include="Dal_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

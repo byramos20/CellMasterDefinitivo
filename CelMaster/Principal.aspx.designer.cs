@@ -14,6 +14,14 @@ namespace CelMaster
     public partial class usiariosAdmon
     {
 
+        /// <summary>
+        /// Control panelfac.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelfac;
 
         /// <summary>
         /// Control fac.
@@ -22,37 +30,16 @@ namespace CelMaster
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-
-        protected global::System.Web.UI.WebControls.Panel panelFormulario_1;
-
-        /// <summary>
-        /// Control lnkFormulario_1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-     
         protected global::System.Web.UI.WebControls.LinkButton fac;
 
         /// <summary>
-        /// Control Envios.
+        /// Control panelInv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelFormulario_2;
-
-        /// <summary>
-        /// Control lnkFormulario_1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-
-        protected global::System.Web.UI.WebControls.LinkButton Envios;
+        protected global::System.Web.UI.WebControls.Panel panelInv;
 
         /// <summary>
         /// Control Inv.
@@ -61,16 +48,16 @@ namespace CelMaster
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelFormulario_3;
+        protected global::System.Web.UI.WebControls.LinkButton Inv;
 
         /// <summary>
-        /// Control lnkFormulario_1.
+        /// Control panelnuevopro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Inv;
+        protected global::System.Web.UI.WebControls.Panel panelnuevopro;
 
         /// <summary>
         /// Control nuevopro.
@@ -79,16 +66,42 @@ namespace CelMaster
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelFormulario_4;
+        protected global::System.Web.UI.WebControls.LinkButton nuevopro;
 
         /// <summary>
-        /// Control lnkFormulario_1.
+        /// Control panelEnvios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelEnvios;
 
-        protected global::System.Web.UI.WebControls.LinkButton nuevopro;
+        /// <summary>
+        /// Control Envios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Envios;
+
+        /// <summary>
+        /// Control panelAdministracionususarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelAdministracionususarios;
+
+        /// <summary>
+        /// Control AdminUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton AdminUser;
     }
 }

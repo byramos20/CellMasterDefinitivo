@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Utilidades
@@ -58,8 +59,15 @@ namespace Utilidades
             return password.Length >= LongitudMinima && Mayusculas >= 1 && Minisculas >= 1 && Numeros >= 1;
 
         }
-
     }
+    //public static bool CorreoEsValido(string correo)
+    //{
+    //    string pattron = @"^[a-zA-z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,}$";
+    //    Regex regex = new Regex(pattron);
+    //    return regex.IsMatch(correo);
 
+    //}
 }
+
+
 

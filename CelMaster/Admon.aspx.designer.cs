@@ -24,13 +24,13 @@ namespace CelMaster
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// Control txtLogin.
+        /// Control txtUserName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLogin;
+        protected global::System.Web.UI.WebControls.TextBox txtUserName;
 
         /// <summary>
         /// Control txtContraseña.
@@ -78,24 +78,6 @@ namespace CelMaster
         protected global::System.Web.UI.WebControls.DropDownList ddlRol;
 
         /// <summary>
-        /// Control txtCargo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCargo;
-
-        /// <summary>
-        /// Control ddlBaja.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBaja;
-
-        /// <summary>
         /// Control lnkVolver.
         /// </summary>
         /// <remarks>
@@ -105,22 +87,22 @@ namespace CelMaster
         protected global::System.Web.UI.WebControls.LinkButton lnkVolver;
 
         /// <summary>
-        /// Control panelBtnNuevo.
+        /// Control panelBtnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelBtnNuevo;
+        protected global::System.Web.UI.WebControls.Panel panelBtnActualizar;
 
         /// <summary>
-        /// Control lnkNuevo.
+        /// Control lnkActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkNuevo;
+        protected global::System.Web.UI.WebControls.LinkButton lnkActualizar;
 
         /// <summary>
         /// Control panelBtnGuardar.
@@ -186,129 +168,12 @@ namespace CelMaster
         protected global::System.Web.UI.WebControls.HiddenField HF_IdUsuario;
 
         /// <summary>
-        /// Control HF_CodigoMunicipio.
+        /// Control griddUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_CodigoMunicipio;
-
-        /// <summary>
-        /// Control HF_Nombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_Nombre;
-
-        /// <summary>
-        /// Control HF_Login.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_Login;
-
-        /// <summary>
-        /// Control HF_Email.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_Email;
-
-        /// <summary>
-        /// Control HF_IdAreaEjecutora.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_IdAreaEjecutora;
-
-        /// <summary>
-        /// Control HF_Cargo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_Cargo;
-
-        /// <summary>
-        /// Control HF_IdRol.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_IdRol;
-
-        /// <summary>
-        /// Control HF_Intentos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_Intentos;
-
-        /// <summary>
-        /// Control HF_Bloqueado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_Bloqueado;
-
-        /// <summary>
-        /// Control HF_Baja.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HF_Baja;
-
-        /// <summary>
-        /// Control lblCantidadRegistros.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCantidadRegistros;
-
-        /// <summary>
-        /// Control ImageButton1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
-
-        /// <summary>
-        /// Control lblBloqueado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBloqueado;
-
-        /// <summary>
-        /// Control lblBaja.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBaja;
+        protected global::System.Web.UI.WebControls.GridView griddUsuario;
     }
 }

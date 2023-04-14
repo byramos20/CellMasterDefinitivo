@@ -30,7 +30,6 @@ namespace DAL
                 Rol Registro_a_Guardar = new Rol();
 
                 Registro_a_Guardar.NombreRol = Entidad.NombreRol;
-                Registro_a_Guardar.Descripcion = Entidad.Descripcion;
                 Registro_a_Guardar.IdUsuarioRegistro = Entidad.IdUsuarioRegistro;
                 Registro_a_Guardar.Activo = true;
                 Registro_a_Guardar.FechaRegistro = DateTime.Now;
@@ -49,7 +48,6 @@ namespace DAL
             {
                 var RegistroBD = bd.Rol.Find(Entidad.IdRol);
                 RegistroBD.NombreRol = Entidad.NombreRol;
-                RegistroBD.Descripcion = Entidad.Descripcion;
                 RegistroBD.UsuarioActualiza = Entidad.UsuarioActualiza;
                 RegistroBD.FechaActualizacion = DateTime.Now;
                 return bd.SaveChanges() > 0;
@@ -63,7 +61,6 @@ namespace DAL
                 if (RegistroBD != null)
                 {
                     RegistroBD.NombreRol = Entidad.NombreRol;
-                    RegistroBD.Descripcion = Entidad.Descripcion;
                     RegistroBD.UsuarioActualiza = Entidad.UsuarioActualiza;
                     RegistroBD.FechaActualizacion = DateTime.Now;
                     return bd.SaveChanges() > 0;

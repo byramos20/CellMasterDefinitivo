@@ -37,6 +37,8 @@ namespace DAL
         public virtual DbSet<DetallesFacturas> DetallesFacturas { get; set; }
         public virtual DbSet<RolFormulario> RolFormularios { get; set; }
         public virtual DbSet<Formulario> Formulario { get; set; }
+        public virtual DbSet<Permisos> Permisos { get; set; }
+        public virtual DbSet<RolPermisos> RolPermisos { get; set; }
 
 
     }

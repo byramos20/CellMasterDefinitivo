@@ -9,9 +9,8 @@ namespace EL
     {
         [Key]
         public int IdRol { get; set; }
-        public String NombreRol { get; set; }
         [Required]
-        public string Descripcion   { get; set; }
+        public String NombreRol { get; set; }
         [Required]
         public int IdUsuarioRegistro { get; set; }
         public DateTime FechaRegistro { get; set; }

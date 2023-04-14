@@ -57,9 +57,11 @@
     <Compile Include="BL_Formulario.cs" />
     <Compile Include="BL_Inventario.cs" />
     <Compile Include="BL_Parametros.cs" />
+    <Compile Include="BL_Permisos.cs" />
     <Compile Include="BL_Productos.cs" />
     <Compile Include="BL_Rol.cs" />
     <Compile Include="BL_RolFormulario.cs" />
+    <Compile Include="BL_RolPermisos.cs" />
     <Compile Include="BL_UnidadesMedidas.cs" />
     <Compile Include="BL_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

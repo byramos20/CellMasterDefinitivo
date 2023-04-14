@@ -61,88 +61,93 @@ namespace CelMaster
         }
         private void VerificarPermisosFormularios(List<RolFormulario> RolFormularios)
         {
-            panelFormulario_1.Visible = false;
-            panelFormulario_2.Visible = false;
-            panelFormulario_3.Visible = false;
-            panelFormulario_4.Visible = false;
+            panelAdministracionususarios.Visible = false;
+            panelfac.Visible = false;
+            panelInv.Visible = false;
+            panelnuevopro.Visible = false;
+            panelEnvios.Visible = false;
 
             foreach (var RolFormulario in RolFormularios)
             {
+                if(RolFormulario.IdFormulario == (int)eFormulario.Administracionususarios)
+                {
+                    panelAdministracionususarios.Visible=true;
+                }
                 if (RolFormulario.IdFormulario == (int)eFormulario.Facturacion)
                 {
-                    panelFormulario_1.Visible = true;
+                    panelfac.Visible = true;
                 }
                 if (RolFormulario.IdFormulario == (int)eFormulario.Inventario)
                 {
-                    panelFormulario_2.Visible = true;
+                    panelInv.Visible = true;
                 }
-                if (RolFormulario.IdFormulario == (int)eFormulario.nuevos_Productos)
+                if (RolFormulario.IdFormulario == (int)eFormulario.NuevosProductos)
                 {
-                    panelFormulario_3.Visible = true;
+                    panelnuevopro.Visible = true;
                 }
                 if (RolFormulario.IdFormulario == (int)eFormulario.Envios)
                 {
-                    panelFormulario_4.Visible = true;
+                    panelEnvios.Visible = true;
                 }
             }
 
         }
-        private bool ValidarSesion()
-        {
-            try
+            private bool ValidarSesion()
             {
-                int IdUsuarioGl = (int)General.ValidarEnteros(Session["IdUsuarioGl"]);
-                int IdRolGl = (int)General.ValidarEnteros(Session["IdRolGl"]);
-                if (!(IdUsuarioGl > 0))
+                try
+                {
+                    int IdUsuarioGl = (int)General.ValidarEnteros(Session["IdUsuarioGl"]);
+                    int IdRolGl = (int)General.ValidarEnteros(Session["IdRolGl"]);
+                    if (!(IdUsuarioGl > 0))
+                    {
+                        AbandonarSesion(false);
+                        return false;
+                    }
+
+                    if (!(IdRolGl > 0))
+                    {
+                        AbandonarSesion();
+                        return false;
+                    }
+
+                    Usuario User = BL_Usuario.Registro(IdUsuarioGl);
+                    if (User == null)
+                    {
+                        AbandonarSesion();
+                        return false;
+                    }
+
+                    if (User.IdRol != IdRolGl)
+                    {
+                        AbandonarSesion();
+                        return false;
+                    }
+
+                    List<RolFormulario> FormulariosUser = BL_RolFormulario.List(IdRolGl);
+                    if (!(FormulariosUser.Count > 0))
+                    {
+                        AbandonarSesion(false);
+                        Mensaje("Estimado usuario, no cuenta con permisos necesarios para ingresar a ningún formulario", eMessage.Info, "", false, true, true, "/Login.aspx", false);
+                        return false;
+                    }
+
+                    VerificarPermisosFormularios(FormulariosUser);
+                    Session["RolFormulariosGl"] = FormulariosUser;
+                    return true;
+                }
+                catch
                 {
                     AbandonarSesion();
                     return false;
                 }
-
-                if (!(IdRolGl > 0))
-                {
-                    AbandonarSesion();
-                    return false;
-                }
-
-                Usuario User = BL_Usuario.Registro(IdUsuarioGl);
-                if (User == null)
-                {
-                    AbandonarSesion();
-                    return false;
-                }
-
-                if (User.IdRol != IdRolGl)
-                {
-                    AbandonarSesion();
-                    return false;
-                }
-
-                List<RolFormulario> FormulariosUser = BL_RolFormulario.List(IdRolGl);
-                if (!(FormulariosUser.Count > 0))
-                {
-                    AbandonarSesion(false);
-                    Mensaje("Estimado usuario, no cuenta con permisos necesarios para ingresar a ningún formulario", eMessage.Info, "", false, true, true, "/Login.aspx", false);
-                    return false;
-                }
-
-                VerificarPermisosFormularios(FormulariosUser);
-                Session["RolFormulariosGl"] = FormulariosUser;
-                return true;
             }
-            catch
-            {
-                AbandonarSesion();
-                return false;
-            }
-        }
         #endregion
 
 
 
 
 
-
+        #region Controles de accesos
         protected void Inv_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Inventario.aspx");
@@ -164,6 +169,12 @@ namespace CelMaster
         {
             Response.Redirect("~/NuevosProductos.aspx");
 
+        }
+        #endregion
+
+        protected void AdminUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admon.aspx");
         }
     }
 }

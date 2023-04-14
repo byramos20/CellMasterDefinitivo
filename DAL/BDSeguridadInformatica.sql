@@ -20,12 +20,11 @@ CREATE TABLE [dbo].[Rol]
 (
 [IdRol] [INT] PRIMARY KEY NOT NULL IDENTITY(1, 1),
 [NombreRol] [VARCHAR] (50)  NOT NULL,
-[Descripcion] [VARCHAR] (150)  NOT NULL,
 [Activo] [BIT] NOT NULL
 
 ,IdUsuarioRegistro [INT] NOT NULL
 ,FechaRegistro [DATETIME] NOT NULL
-,UsuarioActualiza [INT] NULL
+,IdUsuarioActualiza [INT] NULL
 ,FechaActualizacion [DATETIME] NULL
 )
 GO

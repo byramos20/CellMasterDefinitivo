@@ -27,12 +27,12 @@ namespace EL
         }
         public enum eFormulario
         {
-            SiteMaster = 1,
-            Principal = 2,
-            Facturacion = 3,    
-            Inventario = 4,
-            nuevos_Productos = 5,
-            Envios = 6,
+            Administracionususarios = 1,
+            Facturacion = 2,
+            Inventario = 3,
+            NuevosProductos = 4,
+            Envios = 5,
+    
            
         }
         public enum ePermisos
