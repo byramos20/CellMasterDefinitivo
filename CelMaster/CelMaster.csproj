@@ -97,6 +97,7 @@
     <Content Include="assets\estiloproyecto\css\font-awesome.min.css" />
     <Content Include="assets\estiloproyecto\css\grid.css" />
     <Content Include="assets\estiloproyecto\css\owl.carousel.css" />
+    <Content Include="assets\estiloproyecto\css\Paginacion.css" />
     <Content Include="assets\estiloproyecto\css\responsive.css" />
     <Content Include="assets\estiloproyecto\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\estiloproyecto\fonts\glyphicons-halflings-regular.svg" />

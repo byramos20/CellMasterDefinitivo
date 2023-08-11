@@ -168,12 +168,12 @@ namespace CelMaster
         protected global::System.Web.UI.WebControls.HiddenField HF_IdUsuario;
 
         /// <summary>
-        /// Control griddUsuario.
+        /// Control gridUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView griddUsuario;
+        protected global::System.Web.UI.WebControls.GridView gridUsuario;
     }
 }

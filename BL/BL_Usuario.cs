@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
@@ -15,9 +16,9 @@ namespace BL
         {
             return Dal_Usuario.Insert(Entidad);
         }
-        public static bool Update(Usuario Entidad)
+        public static bool Update(Usuario Entidad, bool UpdatePassword)
         {
-            return Dal_Usuario.Update(Entidad);
+            return Dal_Usuario.Update(Entidad , UpdatePassword);
         }
         public static bool PasswordUpdate(Usuario Entidad)
         {
@@ -68,6 +69,11 @@ namespace BL
         {
             return Dal_Usuario.ExisteUserName(UserName);
         }
+        public static bool ExisteUserNameUpdate(string UserName, int IdRegistro)
+        {
+            return Dal_Usuario.ExisteUserNameUpdate(UserName, IdRegistro);  
+        }
+
         public static Usuario ExisteUsuario_x_UserName(string UserName)
         {
             return Dal_Usuario.ExisteUsuario_x_UserName(UserName);

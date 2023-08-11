@@ -14,14 +14,31 @@ namespace Text
     {
         static void Main(string[] args)
         {
-            byte[] Key = Encoding.UTF8.GetBytes("S3Gur1d4d1nf0rm4t1c42o23");//24 Caracteres
-            byte[] IV = Encoding.UTF8.GetBytes("Pr0y3ct03J3mpl00");//16 Caracteres
+            Rol Roles  = new Rol();
 
-            Usuario user = new Usuario();
-            user.IdUsuario = 1010;
-            user.IdUsuarioActualiza = 1;
-            user.Password = Encripty.Encrypt("0702", Key, IV);
-            BL_Usuario.PasswordUpdate(user);
+
+
+            Roles.NombreRol = "Administrador Facturas";
+            Roles.IdUsuarioRegistro = 15;
+
+            Console.WriteLine(BL_Rol.Insert(Roles).IdRol);
+            Console.ReadLine();
+
+
+
+
+
+
+            //byte[] Key = Encoding.UTF8.GetBytes("S3Gur1d4d1nf0rm4t1c42o23");//24 Caracteres
+            //byte[] IV = Encoding.UTF8.GetBytes("Pr0y3ct03J3mpl00");//16 Caracteres
+
+            //Rol user = new Rol();
+            //user.IdRol = 1;
+            //user.IdUsuarioActualiza = 1;
+            //user.NombreRol = "Administradores";
+            //BL_Rol.Actualizar(user);    
+            ////user.Password = Encripty.Encrypt("0702", Key, IV);
+            ////BL_Usuario.PasswordUpdate(user);
 
 
 

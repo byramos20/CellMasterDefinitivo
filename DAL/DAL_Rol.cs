@@ -48,7 +48,7 @@ namespace DAL
             {
                 var RegistroBD = bd.Rol.Find(Entidad.IdRol);
                 RegistroBD.NombreRol = Entidad.NombreRol;
-                RegistroBD.UsuarioActualiza = Entidad.UsuarioActualiza;
+                RegistroBD.IdUsuarioActualiza = Entidad.IdUsuarioActualiza;
                 RegistroBD.FechaActualizacion = DateTime.Now;
                 return bd.SaveChanges() > 0;
             }
@@ -61,7 +61,7 @@ namespace DAL
                 if (RegistroBD != null)
                 {
                     RegistroBD.NombreRol = Entidad.NombreRol;
-                    RegistroBD.UsuarioActualiza = Entidad.UsuarioActualiza;
+                    RegistroBD.IdUsuarioActualiza = Entidad.IdUsuarioActualiza;
                     RegistroBD.FechaActualizacion = DateTime.Now;
                     return bd.SaveChanges() > 0;
                 }
@@ -76,7 +76,7 @@ namespace DAL
             {
                 var RegistroBD = bd.Rol.Find(Entidad.IdRol);
                 RegistroBD.Activo = false;
-                RegistroBD.UsuarioActualiza = Entidad.UsuarioActualiza;
+                RegistroBD.IdUsuarioActualiza = Entidad.IdUsuarioActualiza;
                 RegistroBD.FechaActualizacion = DateTime.Now;
                 return bd.SaveChanges() > 0;
             }
@@ -89,7 +89,7 @@ namespace DAL
                 if (RegistroBD != null)
                 {
                     RegistroBD.Activo = false;
-                    RegistroBD.UsuarioActualiza = Entidad.UsuarioActualiza;
+                    RegistroBD.IdUsuarioActualiza = Entidad.IdUsuarioActualiza;
                     RegistroBD.FechaActualizacion = DateTime.Now;
                     return bd.SaveChanges() > 0;
                 }

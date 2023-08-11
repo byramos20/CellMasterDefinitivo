@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="Admon.aspx.cs" Inherits="CelMaster.Admon" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -39,9 +38,13 @@
                     </div>
                     <div class="col-md-3" style="margin-top: 10px">
                         <label>Rol</label><label style="color: firebrick">*</label>
-                        <asp:DropDownList ID="ddlRol" runat="server" AppendDataBoundItems="true" class="form-control form-select" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                        <asp:DropDownList runat="server" ID="ddlRol"  AppendDataBoundItems="true" Cssclass="form-control form-select" ></asp:DropDownList>
+                        </asp:ListItem></asp:ListItem>
+                        </asp.DropDownList>
+                        </div>
                     </div>
-
+                    
+                <br />
                
 
                     <%-- Botones --%>
@@ -49,35 +52,37 @@
                         <div class="col-md-2">
                             <asp:LinkButton runat="server" ID="lnkVolver" CssClass="w-100 btn " BackColor="#6699CC" ForeColor="White" OnClick="lnkVolver_Click">Volver</asp:LinkButton>
                         </div>
-                        <asp:Panel runat="server" ID="panelBtnActualizar" class="col-md-2" Visible="false">
+                        <asp:Panel runat="server" ID="panelBtnActualizar" class="col-md-2" Visible="true">
                             <asp:LinkButton runat="server" ID="lnkActualizar" CssClass="w-100 btn " BackColor="#6699CC" ForeColor="White" OnClick="lnkActualizar_Click" >Actualizar</asp:LinkButton>
                         </asp:Panel>
                         <asp:Panel runat="server" ID="panelBtnGuardar" class="col-md-2" Visible="true">
                             <asp:LinkButton runat="server" ID="lnkGuardar" CssClass="w-100 btn btn-primary" ForeColor="White" OnClientClick="confirmGuardar('','Seguro desea guardar el usuario.','lnkGuardar',true);return false;" OnClick="lnkGuardar_Click1">Guardar</asp:LinkButton>
                         </asp:Panel>
-                        <asp:Panel runat="server" ID="panelBtnAnular" class="col-md-2" Visible="false">
+                        <asp:Panel runat="server" ID="panelBtnAnular" class="col-md-2" Visible="true">
                             <asp:LinkButton runat="server" ID="lnkAnular" CssClass="w-100 btn btn-warning" ForeColor="White" OnClientClick="Confirmar('Seguro desea anular el registro','lnkAnular','');return false;" OnClick="lnkAnular_Click1">Anular</asp:LinkButton>
                         </asp:Panel>
-                        <asp:Panel runat="server" ID="panelBtnDesbloquear" class="col-md-2" Visible="false">
+                        <asp:Panel runat="server" ID="panelBtnDesbloquear" class="col-md-2" Visible="true">
                             <asp:LinkButton runat="server" ID="lnkDesbloquear" CssClass="form-control btn btn-primary" ForeColor="White" OnClientClick="confirmDesbloquear('','Seguro desea desbloquear el usuario.','lnkDesbloquear',true);return false;" OnClick="lnkDesbloquear_Click1">Limpiar</asp:LinkButton>
                         </asp:Panel>
                     </div>
                     <div class="row"></div>
                      <div class="row">
 
+                         <br />
+                         <br />
+                        
                          <%-- Gri  --%>
                          <div class="row" style="margin-top: 15px; overflow:scroll">
                              <asp:HiddenField runat="server" ID="HF_IdUsuario" />
                              <asp:Gridview runat="server" 
-                                 ID="griddUsuario" 
+                                 ID="gridUsuario" 
                                  AllowPaging ="true" 
                                  PageSize="5" 
                                  CssClass="table table-bordered table-hover" 
                                  AutoGenerateColumns="false" 
                                  EmtyDataText="Sin regisrtros Para Mostrar" 
                                  DataKeyNames="IdUsuario, IdRol" 
-                                 AutoGenerateSelectButton="true"
-                                 >
+                                 AutoGenerateSelectButton="true" OnSelectedIndexChanged="griddUsuario_SelectedIndexChanged1">
                                  <HeaderStyle BackColor="#0099cc" ForeColor="White" />
                                  <SelectedRowStyle BackColor="#999999" ForeColor="#666666" />
                                  <AlternatingRowStyle ForeColor="Yellow" BackColor="White" />
@@ -88,7 +93,6 @@
                                     <asp:BoundField DataField="CuentaBloqueada" HeaderText="Bloqueado" />
                                     <asp:BoundField DataField="Intentosfallidos" HeaderText="Intentos Fallidos" />
                                     <asp:BoundField DataField="NombreRol" HeaderText="Nombre Rol" />
-
                                 </Columns>
 
                              </asp:Gridview>

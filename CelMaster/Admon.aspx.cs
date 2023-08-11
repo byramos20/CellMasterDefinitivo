@@ -3,6 +3,7 @@ using EL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,7 +20,7 @@ namespace CelMaster
 
             if (!IsPostBack)
             {
-                cargarGird();
+                cargarGrid();
                 CargarDDLRol();
             }
 
@@ -106,23 +107,23 @@ namespace CelMaster
 
                 Session["RolFormulariosGl"] = FormulariosUser;
 
-                List<RolPermisos> PermisosUser = BL_RolPermisos.List(IdRolGl);
-                panelBtnActualizar.Visible = false;
+                List<RolFormulario> PermisosUser = BL_RolFormulario.List(IdRolGl);
+                panelBtnActualizar.Visible = true;
                 panelBtnGuardar.Visible = true;
-                panelBtnAnular.Visible = false;
-                panelBtnDesbloquear.Visible = false;
+                panelBtnAnular.Visible = true;
+                panelBtnDesbloquear.Visible = true;
 
                 if (PermisosUser.Count > 0)
                 {
                     foreach (var PermisoUser in PermisosUser)
                     {
-                        if (PermisoUser.IdPermiso == (int)ePermisos.Escribir)
+                        if (PermisoUser.IdRolFormulario == (int)ePermisos.Escribir)
                         {
                             panelBtnActualizar.Visible = true;
                             panelBtnGuardar.Visible = true;
                         }
 
-                        if (PermisoUser.IdPermiso == (int)ePermisos.Anular)
+                        if (PermisoUser.IdRolFormulario == (int)ePermisos.Anular)
                         {
                             panelBtnAnular.Visible = true;
                         }
@@ -139,10 +140,10 @@ namespace CelMaster
                 return false;
             }
         }
-        private void cargarGird()
+        private void cargarGrid()
         {
-            griddUsuario.DataSource = BL_Usuario.vUsuario();
-            griddUsuario.DataBind();
+            gridUsuario.DataSource = BL_Usuario.vUsuario();
+            gridUsuario.DataBind();
         }
         private void CargarDDLRol()
         {
@@ -155,10 +156,10 @@ namespace CelMaster
                 ddlRol.DataTextField = "NombreRol";
                 ddlRol.DataBind();
             }
-            catch 
+            catch
             {
                 Mensaje("Error al cargar los Roles", eMessage.Error);
-                
+
             }
         }
         private void ResetControles()
@@ -171,7 +172,6 @@ namespace CelMaster
             HF_IdUsuario.Value = "0";
 
         }
-
         private bool Validarinsertar()
         {
             if (String.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtNombre.Text))
@@ -191,12 +191,12 @@ namespace CelMaster
             }
             if (!General.validarComplejidadPassword(txtContraseña.Text))
             {
-                Mensaje(Justify("La contraseña no cumple con los requerimientos minimos: <br> <ol> <li>Longitud minima de 8 caractees</li><li>Una Letra mayuscula</li><li>Una letra minuscula</li> <li>Un Numero</li></ol>"),eMessage.Alerta,"",true);
+                Mensaje(Justify("La contraseña no cumple con los requerimientos minimos: <br> <ol> <li>Longitud minima de 8 caractees</li><li>Una Letra mayuscula</li><li>Una letra minuscula</li> <li>Un Numero</li></ol>"), eMessage.Alerta, "", true);
                 return false;
             }
             if (BL_Usuario.ExisteUserName(txtUserName.Text))
             {
-                Mensaje("Este UserName Ya esxiste",eMessage.Alerta);
+                Mensaje("Este UserName Ya esxiste", eMessage.Alerta);
                 return false;
             }
             if (String.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtEmail.Text))
@@ -216,12 +216,114 @@ namespace CelMaster
             }
             return true;
         }
-        private bool ValidarActualizar()
+        private bool ValidarActualizar(int IdRegistro)
         {
+            if (String.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtNombre.Text))
+            {
+                Mensaje("Ingrese el nombre completo del usuario", eMessage.Alerta);
+                return false;
+            }
+            if (String.IsNullOrEmpty(txtUserName.Text) || string.IsNullOrEmpty(txtUserName.Text))
+            {
+                Mensaje("Ingrese el UserName del usuario", eMessage.Alerta);
+                return false;
+            }
+            if (!(String.IsNullOrEmpty(txtContraseña.Text) || string.IsNullOrEmpty(txtContraseña.Text)))
+            {
+                if (!General.validarComplejidadPassword(txtContraseña.Text))
+                {
+                    Mensaje(Justify("La contraseña no cumple con los requerimientos minimos: <br> <ol> <li>Longitud minima de 8 caractees</li><li>Una Letra mayuscula</li><li>Una letra minuscula</li> <li>Un Numero</li></ol>"), eMessage.Alerta, "", true);
+                    return false;
+                }
+            }
+
+            if (BL_Usuario.ExisteUserNameUpdate(txtUserName.Text, IdRegistro))
+            {
+                Mensaje("Este UserName Ya esxiste", eMessage.Alerta);
+                return false;
+            }
+            if (ddlRol.SelectedIndex == 0)
+            {
+                Mensaje("Selecciones el Rol del Usuario", eMessage.Alerta);
+                return false;
+            }
+
             return true;
         }
-
         private void Guardar()
+        {
+            try
+            {
+                int IdUsuariosistema = (int)General.ValidarEnteros(Session["IdUsuarioGl"]);
+                if (!(IdUsuariosistema > 0))
+                {
+                    Mensaje("Datos dek usuario del sistema no encontrados", eMessage.Alerta);
+                    return;
+                }
+                int IdRegistro = (int)General.ValidarEnteros(HF_IdUsuario.Value);
+                Usuario user = new Usuario();
+
+                if (IdRegistro > 0)
+                {
+                    //Actualizando
+                    if (ValidarActualizar(IdRegistro))
+                    {
+                        bool UpdatePassword = false;
+                        user.IdUsuario = IdRegistro;
+                        user.NombreCompleto = txtNombre.Text;
+                        user.UserName = txtUserName.Text;
+                        if (!(String.IsNullOrEmpty(txtContraseña.Text) || string.IsNullOrEmpty(txtContraseña.Text)))
+                        {
+                            user.Password = BL_Usuario.Encrypt(txtContraseña.Text);
+                            UpdatePassword = true;
+                        }
+
+                        user.Correo = txtEmail.Text;
+                        user.IdRol = (int)General.ValidarEnteros(ddlRol.SelectedValue);
+                        user.IdUsuarioActualiza = IdUsuariosistema;
+                        if (BL_Usuario.Update(user, UpdatePassword))
+                        {
+                            ResetControles();
+                            cargarGrid();
+                            Mensaje("Registro actualizado correctamente", eMessage.Exito);
+                            return;
+                        }
+                        Mensaje("Registro no se Actualizo Correctamente", eMessage.Error);
+                        return;
+
+                    }
+                    return;
+                }
+                //Insertar 
+                if (Validarinsertar())
+                {
+                    user.NombreCompleto = txtNombre.Text;
+                    user.UserName = txtUserName.Text;
+                    user.Password = BL_Usuario.Encrypt(txtContraseña.Text);
+                    user.Correo = txtEmail.Text;
+                    user.IdRol = (int)General.ValidarEnteros(ddlRol.SelectedValue);
+                    user.IdUsuarioRegistra = IdUsuariosistema;
+
+                    if (BL_Usuario.Insert(user).IdUsuario > 0)
+                    {
+                        ResetControles();
+                        cargarGrid();
+                        Mensaje("Registro guardado correctamente", eMessage.Exito);
+                        return;
+                    }
+                    Mensaje("Regstro no se pudo Guardar", eMessage.Error);
+                    return;
+                }
+               // Mensaje("No se realizao ninguna operacion", eMessage.Error);
+
+            }
+            catch
+            {
+                //mandar un mesaja operacion no realizada
+                Mensaje("Error al guardar el registro", eMessage.Error);
+            }
+        }
+        private void Anular()
         {
             try
             {
@@ -232,40 +334,30 @@ namespace CelMaster
                     return;
                 }
                 int IdRegistro = (int)General.ValidarEnteros(HF_IdUsuario.Value);
+                Usuario user = new Usuario();
+
                 if (IdRegistro > 0)
                 {
-                    //Actualizando
-                    return;
-                }
-                //Insertar 
-                if (Validarinsertar())
-                {
-                    Usuario user = new Usuario();
-                    user.NombreCompleto = txtNombre.Text;
-                    user.UserName = txtUserName.Text;
-                    user.Password = BL_Usuario.Encrypt(txtContraseña.Text);
-                    user.Correo = txtEmail.Text;
-                    user.IdRol = (int)General.ValidarEnteros(ddlRol.SelectedValue);
-                    user.IdUsuarioRegistra = IdUsuariosistema;
-
-                    if(BL_Usuario.Insert(user).IdUsuario>0)
+                    user.IdUsuario = IdRegistro;
+                    user.IdUsuarioActualiza = IdUsuariosistema;
+                    if (BL.BL_Usuario.Delete(user))
                     {
                         ResetControles();
-                        cargarGird();
-                        Mensaje("Registro guardado correctamente", eMessage.Exito);
+                        cargarGrid();
+                        Mensaje("Registro anulado Correctamente", eMessage.Exito);
                         return;
                     }
-                    Mensaje("Regstro no se pudo Guardar", eMessage.Error);
+                    Mensaje("error al anular el registro", eMessage.Error);
                     return;
                 }
-
+                Mensaje("Asegurese de seleccionar un registro para anular", eMessage.Alerta);
+                return;
             }
             catch
             {
-                //mandar un mesaja operacion no realizada
+                Mensaje("Registro anulado Correctamente", eMessage.Exito);
             }
         }
-
         private void cargarControles(int IdRegisttro)
         {
             try
@@ -276,17 +368,22 @@ namespace CelMaster
                     Mensaje("No se encontraron datos para el registro seleccionado", eMessage.Error);
                     return;
                 }
+                HF_IdUsuario.Value = vUsuarios.IdUsuario.ToString();
                 txtNombre.Text = vUsuarios.NombreCompleto;
                 txtUserName.Text = vUsuarios.UserName;
                 txtContraseña.Text = string.Empty;
                 txtEmail.Text = vUsuarios.Correo;
-                ddlRol.SelectedValue = vUsuarios.IdRol.ToString();  
+                ddlRol.SelectedValue = vUsuarios.IdRol.ToString();
             }
-            catch 
+            catch
             {
 
                 Mensaje("Error al cargar los datos del registro", eMessage.Error);
             }
+        }
+        protected void griddUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
@@ -321,6 +418,7 @@ namespace CelMaster
 
         protected void lnkAnular_Click1(object sender, EventArgs e)
         {
+            Anular();
 
         }
 
@@ -334,6 +432,34 @@ namespace CelMaster
         {
 
         }
+
+
+
         #endregion
+
+        protected void griddUsuario_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            try
+            {
+                int RowIndex = gridUsuario.SelectedRow.RowIndex;
+                int IdRegistro = (int)General.ValidarEnteros(gridUsuario.DataKeys[RowIndex]["IdUsuario"].ToString());
+                if (!(IdRegistro > 0))
+                {
+                    Mensaje("El Id del registro fue 0", eMessage.Error);
+                    return;
+                }
+                cargarControles(IdRegistro);
+
+            }
+            catch
+            {
+                Mensaje("Error al seleccionar el registro", eMessage.Error);
+
+
+
+            }
+
+
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace DAL
                 return Entidad;
             }
         }
-        public static bool Update(Usuario Entidad)
+        public static bool Update(Usuario Entidad , bool UpdatePassword)
         {
             using (BDSeguridadInformatica bd = new BDSeguridadInformatica())
             {
@@ -33,7 +33,7 @@ namespace DAL
                 RegistroBD.NombreCompleto = Entidad.NombreCompleto;
                 RegistroBD.Correo = Entidad.Correo;
                 RegistroBD.UserName = Entidad.UserName;
-                if (Entidad.Password != null)
+                if (UpdatePassword)
                 {
                     RegistroBD.Password = Entidad.Password;
                 }
@@ -185,6 +185,13 @@ namespace DAL
             using (BDSeguridadInformatica bd = new BDSeguridadInformatica())
             {
                 return bd.Usuario.Where(a => a.UserName.ToLower() == UserName.ToLower()).Count() > 0;
+            }
+        }
+        public static bool ExisteUserNameUpdate(string UserName, int IdRegistro)
+        {
+            using (BDSeguridadInformatica bd = new BDSeguridadInformatica())
+            {
+                return bd.Usuario.Where(a => a.UserName.ToLower() == UserName.ToLower() && a.IdUsuario != IdRegistro).Count() > 0;
             }
         }
         public static Usuario ExisteUsuario_x_UserName(string UserName)
